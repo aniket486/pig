@@ -46,6 +46,11 @@ public abstract class Expression {
         OP_LT(" < "),
         OP_LE(" <= "),
         OP_MATCH(" matches "),
+        
+        //unary ops
+        //Only used by PredicatePushdown, not used by PartitionPushdown
+        OP_NULL(" is null "),
+        OP_NOT(" not "),
 
         //binary logical
         OP_AND(" and "),
@@ -64,7 +69,6 @@ public abstract class Expression {
         public String toString(){
             return this.str;
         }
-
     }
 
     protected OpType opType;
